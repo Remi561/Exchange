@@ -10,8 +10,7 @@ function App() {
   
   const queryClient = new QueryClient();
 
-  
-  window.__TANSTACK_QUERY_CLIENT__ = queryClient;
+
 
   return (
     <QueryClientProvider client={queryClient}>
