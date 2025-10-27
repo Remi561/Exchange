@@ -46,18 +46,21 @@ const FormInput = () => {
     const { name, value } = e.target;
     setCurrencyObj((prev) => ({ ...prev, [name]: value }));
   };
+  console.log(lists);
 
-  const currencyTag = lists
-    ? Object.keys(lists?.currencies).map((currency, idx) => (
-        <option
-          key={idx}
-          value={currency}
-          className="flex items-center gap-3 outline-none py-1"
-        >
-          [ {currency} ] <>{lists.currencies[currency]} </>
-        </option>
-      ))
-    : null;
+  const currencyTag =
+    lists?.success === true
+      ? Object.keys(lists?.currencies).map((currency, idx) => (
+          <option
+            key={idx}
+            value={currency}
+            className="flex items-center gap-3 outline-none py-1"
+          >
+            [ {currency} ] <>{lists.currencies[currency]} </>
+          </option>
+        ))
+      : null;
+
   return (
     <form method="POST" className="flex flex-col gap-2 items-center relative">
       <p className="flex items-center gap-2 text-red-600 dark:text-red-800 text-md">
