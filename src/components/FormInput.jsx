@@ -48,7 +48,7 @@ const FormInput = () => {
   };
 
   const currencyTag = lists
-    ? Object.keys(lists.currencies).map((currency, idx) => (
+    ? Object.keys(lists?.currencies).map((currency, idx) => (
         <option
           key={idx}
           value={currency}
